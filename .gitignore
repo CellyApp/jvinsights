@@ -1,0 +1,14 @@
+# Directories #
+/build/
+/bin/
+target/
+src/main/resources/
+
+# OS Files #
+.DS_Store
+*.class
+
+# Eclipse #
+.project
+.classpath
+.settings/
