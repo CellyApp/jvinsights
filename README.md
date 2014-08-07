@@ -1,7 +1,7 @@
 # jvinsights
 
 A convenient interface for using New Relics Insights. Based off
-of the PHP library by Sobit Akhmedov at https://raw.githubusercontent.com/sobit/insights/.
+of the PHP library by Sobit Akhmedov at https://github.com/sobit/insights.
 
 ## Install
 
