@@ -59,16 +59,16 @@ import ly.cel.jvinsights.EventManager;
 public class MyClass {
     public void main(String[] args) {
         // configuration values as per New Relic Insights
-        String accountId = 'YOUR ACCOUNT ID';
-        String insertKey = 'YOUR INSERT KEY';
-        String queryKey  = 'YOUR QUERY KEY';
+        String accountId = "YOUR ACCOUNT ID";
+        String insertKey = "YOUR INSERT KEY";
+        String queryKey  = "YOUR QUERY KEY";
 
         // initialize core classes
         Client client = new Client(accountId, insertKey, queryKey);
         EventManager eventManager = new EventManager(client, "appName");
 
         // create your event
-        MyEvent event = new MyEvent('some attribute');
+        MyEvent event = new MyEvent("some attribute");
 
         // submit event to Insights
         eventManager.persist(event);
