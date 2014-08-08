@@ -18,7 +18,7 @@ import org.json.JSONObject;
  */
 public class Client implements ClientInterface {
   
-  private static String URL_PREFIX = "https://insights.newrelic.com/beta_api/accounts/";
+  private static String URL_PREFIX = "https://insights-collector.newrelic.com/v1/accounts/";
   
   private String accountId;
   private String insertKey;
@@ -44,7 +44,10 @@ public class Client implements ClientInterface {
   public JSONObject insert(JSONArray json) {
     String url = URL_PREFIX + this.accountId + "/events";
     String response = post(url, this.insertKey, json);
-    return new JSONObject(response);
+    if (response != null && response.length()>0) {
+      return new JSONObject(response);
+    }
+    return new JSONObject();
   }
 
   /*
@@ -54,7 +57,10 @@ public class Client implements ClientInterface {
   public JSONObject query(String nrql) {
     String url = URL_PREFIX + this.accountId + "/query";
     String response = get(url, this.queryKey, nrql);
-    return new JSONObject(response);
+    if (response != null && response.length()>0) {
+      return new JSONObject(response);
+    }
+    return new JSONObject();
   }
 
   /*
